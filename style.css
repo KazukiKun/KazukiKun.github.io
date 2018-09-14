@@ -2,9 +2,8 @@
 #mainContent {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 200%;
-	font-weight: underline;
-	background: url(https://ih1.redbubble.net/image.495191423.0676/pp,550x550.u1.jpg) ;
-	border-radius: 20px;
+	font-weight: bold;
+	background-color: pink
 	padding: 210px;
 	text-align: center;
 }
@@ -16,7 +15,8 @@
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	font-weight: bold;
 	color: #663300;
-	width: 90px;
+	width: 120px;
+	font-size: 10px
 }
 
 .buttonStyle:hover {
@@ -30,5 +30,10 @@
 	background-color: yellow;
 	color: #669900;
 	cursor: cursor;
+}
+
+{	
+	table
+	border-collapse: collapse
 }
 
