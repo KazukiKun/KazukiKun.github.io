@@ -38,6 +38,7 @@ ul {
   <li class="nav-item">
     <a class="nav-link" href="contactme.html">Contact Me</a>
     <a class="nav-link" href="PythonTextAdventure.html">TextAdventure</a>
+    <a class="nav-link" href="fictionstory.html">Python Story</a>
   </li>
   </ul>
 </div>
@@ -61,3 +62,125 @@ ul {
   </tr>
 </table>
 
+
+
+
+<body>
+  
+  <button type="button" onClick=clickme() >Click Me</button>
+  <p id="ptext">You don't really wanna click this lol</p>
+  
+  <button type="button" onclick=adder()>Adder</button>
+  
+  <button type="button" onclick=Paragraph()>paragraph</button>
+  
+  <img id="graphic" src="anime.jpg"/>
+  
+  <button type="button" id="showImg" onClick=showImg()>SHOW</button>
+  <button type="button" id="hideImg" onClick=hideImg()>HIDE</button>
+  
+  <p id="name">My name will go here</p>
+
+  
+  <script>
+  
+    var state = "anime"
+    
+    var button2= document.createElement("button")
+    var buttonText = document.createTextNode("Clicker")
+    button2.appendChild(buttonText)
+    button2.setAttribute("onClick", "picChange()")
+    button2.setAttribute("id", "bubblegum")
+    
+    
+    var adder= document.createElement("button")
+    var buttonText = document.createTextNode("adder")
+    adder.appendChild(buttonText)
+    adder.setAttribute("onClick", "adder()")
+    adder.setAttribute("id", "bubblegum")
+    
+    
+    document.body.appendChild(adder)
+    
+    function hideImg(){
+      pic.style.display = "none"
+    }
+    
+    function showImg(){
+      pic.style.display = "block"
+    }
+   
+    function picChange(){
+      
+      
+      if (state == "anime"){
+        pic.src = "/daisy.png"
+        button.innerHTML = "Daisy"
+        state = "Daisy"
+      }
+      else if (state == "Daisy"){
+        pic.src = "/anime.jpg"
+      button.innerHTML = "anime"
+      state = "Rosalina"
+      }
+      if (state == "Rosalina"){
+        pic.src = "/Peach.png"
+      button.innerHTML = "Peach"
+      state = "Peach"
+      }
+      else if (state == "Peach"){
+        pic.src = "/Rosalina.png"
+      button.innerHTML = "Rosalina"
+      state = "anime"
+      }
+      
+     }
+        
+
+    
+      
+      
+      
+    
+    
+    
+    function clickme(){
+        var ptext = document.getElementById('ptext')
+         ptext.innerHTML = 'Okay now this is pretty epic'
+         ptext.style.fontSize = "55px"
+         ptext.style.color = "#ffc0cb"
+    }
+    
+    function adder(){
+    var x = 3
+    var y = 4
+    var z = x + y
+    var ptext = document.getElementById('ptext')
+     ptext.innerHTML = "The answer is:" + z
+     alert("The answer is:" + z)
+    }
+    
+    function Paragraph(){
+      var ptext = document.getElementById('ptext')
+         ptext.innerHTML = 'Hi Yes this is working perfectly'
+         ptext.style.fontSize = "65px"
+         ptext.style.color = "red"
+    }
+    
+    
+    
+    var word = "Rylee" + " " + "Fabian"
+    document.getElementById("name").innerHTML = word
+    
+    var w = 4
+    
+    if (w > 6){
+      document.getElementById("name").innerHTML = "Hello"
+    }
+    else{
+      document.getElementById("name").innerHTML = "Bye"
+    }
+    var pic = document.getElementById("graphic")
+    var button = document.getElementById("picButton")
+</script>
+</body>
