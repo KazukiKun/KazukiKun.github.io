@@ -64,7 +64,7 @@
     
     #text{
         color: white;
-        font-size: 20px;
+        font-size: 30px;
     }
 
 
@@ -130,63 +130,98 @@
     var state = "intro"
     
     function intro(){
-        text.innerHTML = "High School Romance<br>Tokyo, Japan<br><br>6:25 AM November 15, 2017<br><br>Good Morning, your ordinary day starts at your house. Your name is Sora a 16 year old boy that is cuurently a 10th grader. Pretty shy, not really good at socializing and has decent grades and never fell in love with anyone."
-        button1.innerHTML = "Yes"
+        text.innerHTML = "High School Romance<br>Tokyo, Japan<br><br>6:25 AM November 15, 2017<br><br>Good Morning, your ordinary day starts at your house. Your name is Sora a 16 year old boy that is cuurently a 10th grader. Pretty shy, not really good at socializing and has decent grades and never fell in love with anyone. With this adventure, will you be able to find who your true love is? Well, lets begin! owo"
+        button1.innerHTML = "Start Game"
         button1.style.display = "block"
-        button2.innerHTML = "No"
-        button2.style.display = "block"
+        button2.style.display = "none"
         button3.style.display = "none"
         button4.style.display = "none"
         graphic.src = "/Sora.jpg"
     }
     
-    function park(){
-        text.innerHTML = "you made it to the park"
-        button1.innerHTML = "Swing"
+    function House(){
+        text.innerHTML = "You realize that you need to get ready for school.<br><br>Do You Want To Wake Up To Go To School?"
+        button1.innerHTML = "Yes"
         button1.style.display = "block"
-        button2.innerHTML = "Slide"
+        button2.innerHTML = "No"
         button2.style.display = "block"
-        button3.style.display = "none"
-        button3.innerHTML = "Spin"
-        button4.style.display = "none"
-        button4.innerHTML = "Run"
         graphic.src = "/SoraHouse.png"
     
         }
-    
-    function alley(){
-        text.innerHTML = "you made it to the alley"
-        button1.innerHTML = "Hide"
+        
+        function DidNotWakeUp(){
+        text.innerHTML = "You Did not wake up and you miss your day of school.<br><br>Here is a little hint for you, refresh the page and try again."
+        button1.innerHTML = ""
+        button1.style.display = "none"
+        button2.innerHTML = ""
+        button2.style.display = "none"
+        }
+   
+    function WalkingToSchool(){
+        text.innerHTML = "You made it to school! Sweet! You see your best friend Kenzou, he's been your best buddy ever since 9th grade. Do You feel like walking alone or going with Kenzou? "
+        button1.innerHTML = "Walk"
         button1.style.display = "block"
-        button2.innerHTML = "Run"
+        button2.innerHTML = "Walk Alone"
         button2.style.display = "block"
         button3.style.display = "none"
-        button3.innerHTML = "Scream"
+        button3.innerHTML = ""
         button4.style.display = "none"
-        button4.innerHTML = "Cry"
-        graphic.src = "/AnimeAlley.jpg"
+        button4.innerHTML = ""
+        graphic.src = "/AnimeSchool.jpg"
         
     }
     
-    function buttonclick(button){
-        if (state == "intro"){
-            if (button == 1){
-                state  = "park"
-                park()
-            }
-            else if (button == 2){
-                state = "alley"
-                alley()
-            }
-        }
-        else if(state == "park"){
-            //button checks
-        }
-        else if(state == "alley"){
-            //button checks
-        }
+    function School(){
+        text.innerHTML = " "
+        button1.innerHTML = ""
+        button1.style.display = "block"
+        button2.innerHTML = ""
+        button2.style.display = "block"
+        button3.style.display = "none"
+        button3.innerHTML = ""
+        button4.style.display = "none"
+        button4.innerHTML = ""
+        graphic.src = "/"
+        
     }
     
+    function buttonclick(button)
+    {
+        if (state == "intro"){
+            if (button == 1){
+                state  = "House"
+                House()
+            }
+        }
+        else if(state == "House"){
+            if (button == 2){
+                state = "DidNotWakeUp"
+                DidNotWakeUp()
+                
+            }
+            else if(state == "House"){
+                if (button == 1){
+                    state = "WalkingToSchool"
+                    WalkingToSchool()
+                }
+            }
+        }
+        else if(state == "House"){
+            if (button == 1){
+                state = "WalkingToSchool"
+                WalkingToSchool()
+                
+            }
+            if (state == "WalkingToSchool"){
+                if (button == 1){
+                    state = "School"
+                    School()
+                }
+                
+            }
+        }
+        
+    } 
     intro()
     
 </script>
